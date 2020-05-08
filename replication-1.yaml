@@ -12,7 +12,7 @@ spec:
         name: erep1 
     spec:
       containers:
-      - image: pthopa/elasticsearch:v1.0.0
+      - image: pthopa/elastic:v1.0.0
         name: elastictest
         ports:
         - containerPort: 9200

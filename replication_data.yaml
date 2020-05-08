@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: erep-2
+spec:
+  replicas: 1  
+  selector:    
+    name: erep-2
+  template:    
+    metadata:
+      labels:  
+        name: erep2 
+    spec:
+      containers:
+      - image: pthopa/elasticsearch:v1.0.0
+        name: elastictest
+        ports:
+        - containerPort: 9300
+          name: "transport"
+        volumeMounts:
+           - mountPath: "/usr/share/elasticsearch/data"
+             name: "elasticsearch-data"
+             readOnly: false
+      volumes:
+          - emptyDir:
+               medium:  ""
+            name: "elasticsearch-data"
+      restartPolicy: Always

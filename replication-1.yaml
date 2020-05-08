@@ -9,7 +9,7 @@ spec:
   template:    
     metadata:
       labels:  
-        name: erep1 
+        name: erep-1 
     spec:
       containers:
       - image: pthopa/elastic:v1.0.0

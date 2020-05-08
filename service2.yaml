@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: elasticond
+  namespace: elasticsearch
+spec:
+  selector:
+    component: "elasticsearch"
+    type: "coordinating-only"
+    provider: "fabric8"
+    type: "LoadBalancer"
+  ports:
+    - protocol: TCP
+      port: 9200
+      targetPort: "http"
